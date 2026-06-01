@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>慈光圖書館 線上捐款</title>
+  <meta name="description" content="慈光圖書館線上捐款頁面，安全快速，由藍新金流提供支付服務。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">慈光圖書館</h1>
+    <p class="subtitle">線上捐款 — 感謝您的支持與愛心 🙏</p>
+
+    <form id="donationForm" class="donation-form">
+
+      <!-- 金額 -->
+      <label for="amt">捐款金額（元）<span class="required">*</span></label>
+      <input type="number" id="amt" name="amt" min="1" placeholder="請輸入捐款金額" required />
+
+      <!-- 捐款項目 -->
+      <label for="category">捐款項目 <span class="required">*</span></label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected>請選擇捐款用途</option>
+        <option value="圖書添購">📚 圖書添購</option>
+        <option value="館舍維護">🏛️ 館舍維護</option>
+        <option value="推廣活動">🎉 推廣活動</option>
+        <option value="教育課程">📖 教育課程</option>
+        <option value="其他用途">💛 其他用途</option>
+      </select>
+
+      <!-- Email -->
+      <label for="email">聯絡 Email <span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+      <!-- 電話 -->
+      <label for="phone">聯絡電話 <span class="required">*</span></label>
+      <input type="tel" id="phone" name="phone" placeholder="例如：0912-345-678" required />
+
+      <!-- 留言 -->
+      <label for="message">留言（選填）</label>
+      <textarea id="message" name="message" rows="3" placeholder="感謝話語、指定用途或其他說明…"></textarea>
+
+      <button type="submit" id="payBtn" class="submit-btn">前往付款</button>
+      <p id="loadingMsg" style="display:none; color:#3498db; font-size:0.9rem; text-align:center;">
+        ⏳ 正在建立訂單，請稍候...
+      </p>
+
+    </form>
+
+    <p class="notice">本頁面使用藍新金流安全加密處理付款，您的信用卡資訊不會被本站儲存。</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

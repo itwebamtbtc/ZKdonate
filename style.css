@@ -1,0 +1,155 @@
+/* ============================================================
+   慈光圖書館捐款頁面樣式
+   Google Font: Inter
+   ============================================================ */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 2rem 2.5rem 1.5rem;
+  max-width: 460px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  margin: 0 0 1.8rem;
+  color: #666;
+  text-align: center;
+}
+
+/* ---- Form Layout ---- */
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.donation-form label {
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: #444;
+  margin-top: 0.6rem;
+  margin-left: 0.1rem;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+/* ---- Inputs, Select, Textarea ---- */
+.donation-form input,
+.donation-form select,
+.donation-form textarea {
+  padding: 0.72rem 1rem;
+  border: 1.5px solid #dde1e7;
+  border-radius: 8px;
+  font-size: 0.97rem;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.donation-form input:focus,
+.donation-form select:focus,
+.donation-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.18);
+}
+
+.donation-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.donation-form textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* ---- Submit Button ---- */
+.submit-btn {
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.35);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ---- Notice ---- */
+.notice {
+  font-size: 0.78rem;
+  color: #999;
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+  .container {
+    padding: 1.5rem 1.2rem;
+    border-radius: 12px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+}
