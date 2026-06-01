@@ -1,4 +1,4 @@
-const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxkMvsUMT7SlmyBxH3XSAlWrEks_L8KSmdDCJlCrCA-EgqhNsIxolnyqipJpp_sqtBu/exec";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzQbkubvwYjrNZlDklBGz6Jwtuj1o_cpKwqcLbs3nQ1PRScRR98FkKnKDJ96b45Yvlm/exec";
 
 const form = document.getElementById("donationForm");
 const payBtn = document.getElementById("payBtn");
