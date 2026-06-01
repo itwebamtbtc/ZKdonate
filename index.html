@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +8,16 @@
   <meta name="description" content="慈光圖書館線上捐款表單，支援藍新金流付款。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="container">
-    <h1 class="title">慈光圖書館線上捐款</h1>
-    <p class="subtitle">感謝您的支持，讓閱讀與陪伴持續發生。</p>
+    <h1 class="title">慈光圖書館 線上捐款</h1>
+    <p class="subtitle">慈光圖書館暨台中淨宗學會，感謝您的護持。</p>
 
     <form id="donationForm" class="donation-form">
       <label for="amt">捐款金額（新台幣）<span class="required">*</span></label>
@@ -22,17 +26,39 @@
       <label for="category">捐款用途 <span class="required">*</span></label>
       <select id="category" name="category" required>
         <option value="" disabled selected>請選擇捐款用途</option>
-        <option value="圖書館營運支持">圖書館營運支持</option>
-        <option value="購書與閱讀推廣">購書與閱讀推廣</option>
-        <option value="公益活動支持">公益活動支持</option>
-        <option value="不指定用途">不指定用途</option>
+        <option value="一般經費">一般經費/不指定用途</option>
+        <option value="助印弘法">助印弘傳播</option>
+        <option value="護生助念">護放生聯誼關懷助念</option>
+        <option value="慈善救濟">義診施藥慈善救濟</option>
+        <option value="建築設備">建築修繕及設備</option>
+        <option value="供養三寶">供住持佛寶、法寶、僧寶</option>
       </select>
 
       <label for="email">電子信箱 <span class="required">*</span></label>
       <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
 
       <label for="phone">聯絡電話 <span class="required">*</span></label>
-      <input type="tel" id="phone" name="phone" placeholder="例：0912-345-678" autocomplete="tel" required />
+      <input type="tel" id="phone" name="phone" placeholder="例：0912-345678" autocomplete="tel" required />
+
+      <fieldset class="receipt-fieldset">
+        <legend>收據寄送</legend>
+        <label class="radio-option">
+          <input type="radio" name="receiptOption" value="none" checked />
+          <span>僅開立收據，無須寄送</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="receiptOption" value="mail" />
+          <span>索取紙本收據</span>
+        </label>
+      </fieldset>
+
+      <div id="receiptFields" class="receipt-fields" hidden>
+        <label for="receiptTitle">收據抬頭 <span class="required">*</span></label>
+        <input type="text" id="receiptTitle" name="receiptTitle" placeholder="請輸入收據抬頭" />
+
+        <label for="receiptAddress">收件地址 <span class="required">*</span></label>
+        <textarea id="receiptAddress" name="receiptAddress" rows="2" placeholder="請輸入收件地址"></textarea>
+      </div>
 
       <label for="message">備註</label>
       <textarea id="message" name="message" rows="3" placeholder="可留下收據、聯絡或祝福備註"></textarea>
@@ -46,4 +72,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
