@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: #333;
   display: flex;
@@ -69,7 +69,7 @@ body {
   border: 1.5px solid #dde1e7;
   border-radius: 8px;
   font-size: 0.97rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
   background: #fff;
   color: #333;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -109,7 +109,7 @@ body {
   padding: 0.9rem;
   font-size: 1rem;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
   cursor: pointer;
   margin-top: 0.8rem;
   transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
@@ -138,6 +138,13 @@ body {
   margin-top: 1.2rem;
   margin-bottom: 0;
   line-height: 1.5;
+}
+
+.loading-msg {
+  color: #3498db;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0.75rem 0 0;
 }
 
 /* ---- Responsive ---- */
