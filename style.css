@@ -132,6 +132,10 @@ body {
   gap: 0.4rem;
 }
 
+.receipt-fields[hidden] {
+  display: none;
+}
+
 /* ---- Submit Button ---- */
 .submit-btn {
   background: linear-gradient(90deg, #3498db, #2ecc71);
