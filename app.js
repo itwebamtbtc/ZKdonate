@@ -1,8 +1,25 @@
-const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzQbkubvwYjrNZlDklBGz6Jwtuj1o_cpKwqcLbs3nQ1PRScRR98FkKnKDJ96b45Yvlm/exec";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyG8_iyHYFuXvbOcu_3Qb3v9MJ3HZPYgMqAJp_fhevYlPpm_FBqLbFttB3cKTCHU7qP/exec";
 
 const form = document.getElementById("donationForm");
 const payBtn = document.getElementById("payBtn");
 const loadingMsg = document.getElementById("loadingMsg");
+const receiptFields = document.getElementById("receiptFields");
+const receiptTitleInput = document.getElementById("receiptTitle");
+const receiptAddressInput = document.getElementById("receiptAddress");
+
+document.querySelectorAll('input[name="receiptOption"]').forEach((input) => {
+  input.addEventListener("change", () => {
+    const shouldMailReceipt = document.querySelector('input[name="receiptOption"]:checked').value === "mail";
+    receiptFields.hidden = !shouldMailReceipt;
+    receiptTitleInput.required = shouldMailReceipt;
+    receiptAddressInput.required = shouldMailReceipt;
+
+    if (!shouldMailReceipt) {
+      receiptTitleInput.value = "";
+      receiptAddressInput.value = "";
+    }
+  });
+});
 
 function setLoading(isLoading) {
   payBtn.disabled = isLoading;
@@ -35,6 +52,9 @@ form.addEventListener("submit", async (event) => {
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const message = document.getElementById("message").value.trim();
+  const receiptRequired = document.querySelector('input[name="receiptOption"]:checked').value === "mail";
+  const receiptTitle = receiptTitleInput.value.trim();
+  const receiptAddress = receiptAddressInput.value.trim();
 
   if (!Number.isInteger(amount) || amount < 1) {
     alert("請輸入正確的捐款金額。");
@@ -43,6 +63,11 @@ form.addEventListener("submit", async (event) => {
 
   if (!category || !email || !phone) {
     alert("請填寫必填欄位。");
+    return;
+  }
+
+  if (receiptRequired && (!receiptTitle || !receiptAddress)) {
+    alert("索取紙本收據時，請填寫收據抬頭與收件地址。");
     return;
   }
 
@@ -58,7 +83,10 @@ form.addEventListener("submit", async (event) => {
         category,
         email,
         phone,
-        message
+        message,
+        receiptRequired,
+        receiptTitle,
+        receiptAddress
       })
     });
 
